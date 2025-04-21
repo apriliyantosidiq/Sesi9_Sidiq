@@ -5,9 +5,12 @@
         let driver;
 
         it('Visit SauceDemo dan cek page title', async function () {
+            this.timeout (30000);
+
             driver = await new Builder().forBrowser('chrome').build();
 
             await driver.get('https://www.saucedemo.com/');
+            
             const title = await driver.getTitle();
             
             //Check Login Succes
